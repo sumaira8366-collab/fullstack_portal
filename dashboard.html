@@ -172,9 +172,7 @@
 
       <div class="summary-box">
         <span class="badge">Executive Summary</span><br>
-        A highly motivated and dedicated final-semester Computer Science fresh graduate with practical experience in software development, testing, and academic projects. Possessing strong skills in web development, object-oriented programming, system administration, and IT infrastructure, along with a solid foundation in quality assurance and testing practices. 
-        <br><br>
-        Recently qualified the National IT Skills Competency Test (HEC) with 61.4% Percentage, demonstrating a strong commitment to professional growth and technical excellence. Currently enrolled in a NAVTTC-certified course: System Administration and IT Infrastructure, gaining hands-on experience under real-time industrial guidelines.
+        A highly motivated and dedicated final-semester Computer Science fresh graduate with practical experience in software development, testing, and academic projects. 
       </div>
 
       <div class="grid">
@@ -184,7 +182,7 @@
         </div>
         <div class="card-4d">
           <h3><i data-lucide="award"></i> Certifications</h3>
-          <p>HEC National IT Skills Test: 61.4%<br>NAVTTC System Admin (In Progress)<br>API Testing (Postman & JMeter)</p>
+          <p>HEC National IT Skills Test: 61.4%<br>NAVTTC System Admin (In Progress)</p>
         </div>
       </div>
     </div>
@@ -195,20 +193,9 @@
         <div class="card-4d">
           <h3>Technical Skills</h3>
           <ul>
-            <li>Software Testing & QA (Bug Reporting)</li>
-            <li>System Administration & Infrastructure</li>
-            <li>Web Development (HTML/CSS/React)</li>
+            <li>Software Testing & QA</li>
+            <li>Web Development</li>
             <li>Database Basics (SQL)</li>
-            <li>Operating Systems (Windows/Linux)</li>
-          </ul>
-        </div>
-        <div class="card-4d">
-          <h3>Soft Skills</h3>
-          <ul>
-            <li>Problem Solving & Analytical Thinking</li>
-            <li>Teamwork & Collaboration</li>
-            <li>Time Management</li>
-            <li>Leadership (Team Lead of 9)</li>
           </ul>
         </div>
       </div>
@@ -220,7 +207,6 @@
         <span class="badge">2024</span>
         <h3>Programmer Intern</h3>
         <p><strong>SNJ Global Services</strong> | March - Sept 2024</p>
-        <p style="margin-top: 10px;">Developed and debugged production code, collaborated with cross-functional development teams, and gained hands-on experience in real-world programming environments.</p>
       </div>
     </div>
 
@@ -229,15 +215,7 @@
       <div class="grid">
         <div class="card-4d">
           <h3>DeskBot</h3>
-          <p>AI-Based Desktop Assistant using speech recognition to automate core system tasks via voice commands.</p>
-        </div>
-        <div class="card-4d">
-          <h3>MITM Simulation</h3>
-          <p>Network Security project using Banana Pi and USB-based approaches to analyze system vulnerabilities.</p>
-        </div>
-        <div class="card-4d">
-          <h3>React Web Portal</h3>
-          <p>Full authentication system built with React, featuring input validation, error handling, and secure login.</p>
+          <p>AI-Based Desktop Assistant using speech recognition.</p>
         </div>
       </div>
     </div>
@@ -247,13 +225,16 @@
   <script>
     lucide.createIcons();
 
-    // DYNAMIC USERNAME FROM LOGIN
     window.onload = function() {
       const userEmail = localStorage.getItem("userEmail");
-      if (userEmail) {
-        const name = userEmail.split('@')[0];
-        document.getElementById("sidebar-user-name").innerText = name.charAt(0).toUpperCase() + name.slice(1);
+
+      if (!userEmail) {
+        window.location.href = "index.html"; 
+        return;
       }
+
+      const name = userEmail.split('@')[0];
+      document.getElementById("sidebar-user-name").innerText = name.charAt(0).toUpperCase() + name.slice(1);
     };
 
     function show(btn, id) {
@@ -263,9 +244,10 @@
       document.getElementById(id).classList.add("active");
     }
 
+    // 2. LOGOUT LOGIC (Redirecting to index.html)
     function logout() {
-      localStorage.removeItem("userEmail");
-      window.location.href = "login.html";
+      localStorage.removeItem("userEmail"); 
+      window.location.href = "index.html";
     }
   </script>
 </body>

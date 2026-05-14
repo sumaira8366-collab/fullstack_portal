@@ -24,7 +24,7 @@ app.post("/signup", (req, res) => {
   const sql = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
   db.query(sql, [name, email, password], (err, result) => {
     if (err) {
-      console.error("DB Insert Error:", err); // Railway logs mein error dikhayega
+      console.error("DB Insert Error:", err); 
       return res.status(500).send("Database Error: " + err.message);
     }
     res.status(200).send("User registered successfully");
@@ -48,7 +48,6 @@ app.post("/login", (req, res) => {
   });
 });
 
-// Railway ke liye Port settings
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server running on port ${PORT}`);

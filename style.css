@@ -26,7 +26,7 @@ body {
   transition: transform 0.3s ease;
 }
 
-/* Thora sa hover effect 3D feel ke liye */
+
 .container:hover {
   transform: translateY(-5px);
 }
@@ -88,4 +88,16 @@ a:hover {
   margin-top: 15px;
   font-size: 14px;
   font-weight: 500;
+}
+
+@media (max-width: 480px) {
+  .login-body .container {
+    width: 90%;
+    padding: 20px;
+    max-width: 300px;
+  }
+  
+  .login-body h2 {
+    font-size: 1.5rem;
+  }
 }
